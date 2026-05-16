@@ -3,11 +3,11 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import photo from "../public/profile3.png";
 
 export default function Presentation() {
     const [hoveredContact, setHoveredContact] = useState<string | null>(null);
-
     return (
         <section className="relative w-full min-h-screen lg:h-screen overflow-x-hidden lg:overflow-hidden pt-24 lg:pt-14 pb-12 lg:pb-0">
             <div className="max-w-7xl mx-auto px-6 lg:px-12 h-full flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12 lg:gap-16 relative z-10">
@@ -98,24 +98,30 @@ export default function Presentation() {
                         transition={{ duration: 0.5, delay: 1.2 }}
                         className="roles flex flex-wrap lg:flex-nowrap justify-center lg:justify-start gap-2 lg:gap-3 mt-3 mb-6 w-full"
                     >
-                        <h3 className="inline-flex items-center gap-1.5 lg:gap-2 px-3 lg:px-4 py-2 rounded-full border border-blue-500/40 bg-[#081324] text-blue-100 font-semibold text-xs lg:text-[13px] shadow-[0_0_15px_rgba(59,130,246,0.15)] whitespace-nowrap">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-blue-400 shrink-0">
-                                <path d="M11.64 5.23a.75.75 0 00-1.28 0l-1.39 2.5a5.25 5.25 0 01-2.24 2.24l-2.5 1.39a.75.75 0 000 1.28l2.5 1.39a5.25 5.25 0 012.24 2.24l1.39 2.5a.75.75 0 001.28 0l1.39-2.5a5.25 5.25 0 012.24-2.24l2.5-1.39a.75.75 0 000-1.28l-2.5-1.39a5.25 5.25 0 01-2.24-2.24l-1.39-2.5zM21.5 3a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0121.5 3zM18.5 18a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0118.5 18z" />
-                            </svg>
-                            CEO de Lazarus Tech
-                        </h3>
-                        <h3 className="inline-flex items-center gap-1.5 lg:gap-2 px-3 lg:px-4 py-2 rounded-full border border-blue-500/40 bg-[#081324] text-blue-100 font-semibold text-xs lg:text-[13px] shadow-[0_0_15px_rgba(59,130,246,0.15)] whitespace-nowrap">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-blue-400 shrink-0">
-                                <path d="M11.64 5.23a.75.75 0 00-1.28 0l-1.39 2.5a5.25 5.25 0 01-2.24 2.24l-2.5 1.39a.75.75 0 000 1.28l2.5 1.39a5.25 5.25 0 012.24 2.24l1.39 2.5a.75.75 0 001.28 0l1.39-2.5a5.25 5.25 0 012.24-2.24l2.5-1.39a.75.75 0 000-1.28l-2.5-1.39a5.25 5.25 0 01-2.24-2.24l-1.39-2.5zM21.5 3a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0121.5 3zM18.5 18a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0118.5 18z" />
-                            </svg>
-                            Ingeniero Informático Full Stack
-                        </h3>
-                        <h3 className="inline-flex items-center gap-1.5 lg:gap-2 px-3 lg:px-4 py-2 rounded-full border border-blue-500/40 bg-[#081324] text-blue-100 font-semibold text-xs lg:text-[13px] shadow-[0_0_15px_rgba(59,130,246,0.15)] whitespace-nowrap">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-blue-400 shrink-0">
-                                <path d="M11.64 5.23a.75.75 0 00-1.28 0l-1.39 2.5a5.25 5.25 0 01-2.24 2.24l-2.5 1.39a.75.75 0 000 1.28l2.5 1.39a5.25 5.25 0 012.24 2.24l1.39 2.5a.75.75 0 001.28 0l1.39-2.5a5.25 5.25 0 012.24-2.24l2.5-1.39a.75.75 0 000-1.28l-2.5-1.39a5.25 5.25 0 01-2.24-2.24l-1.39-2.5zM21.5 3a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0121.5 3zM18.5 18a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0118.5 18z" />
-                            </svg>
-                            Tech Lead
-                        </h3>
+                        <Link href="/sobre-mi?master=experiencia&role=ceo">
+                            <h3 className="inline-flex items-center gap-1.5 lg:gap-2 px-3 lg:px-4 py-2 rounded-full border border-blue-500/40 bg-[#081324] text-blue-100 font-semibold text-xs lg:text-[13px] shadow-[0_0_15px_rgba(59,130,246,0.15)] whitespace-nowrap hover:bg-blue-500/20 cursor-pointer transition-colors duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-blue-400 shrink-0">
+                                    <path d="M11.64 5.23a.75.75 0 00-1.28 0l-1.39 2.5a5.25 5.25 0 01-2.24 2.24l-2.5 1.39a.75.75 0 000 1.28l2.5 1.39a5.25 5.25 0 012.24 2.24l1.39 2.5a.75.75 0 001.28 0l1.39-2.5a5.25 5.25 0 012.24-2.24l2.5-1.39a.75.75 0 000-1.28l-2.5-1.39a5.25 5.25 0 01-2.24-2.24l-1.39-2.5zM21.5 3a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0121.5 3zM18.5 18a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0118.5 18z" />
+                                </svg>
+                                CEO de Lazarus Tech
+                            </h3>
+                        </Link>
+                        <Link href="/sobre-mi?master=experiencia&role=ingeniero">
+                            <h3 className="inline-flex items-center gap-1.5 lg:gap-2 px-3 lg:px-4 py-2 rounded-full border border-blue-500/40 bg-[#081324] text-blue-100 font-semibold text-xs lg:text-[13px] shadow-[0_0_15px_rgba(59,130,246,0.15)] whitespace-nowrap hover:bg-blue-500/20 cursor-pointer transition-colors duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-blue-400 shrink-0">
+                                    <path d="M11.64 5.23a.75.75 0 00-1.28 0l-1.39 2.5a5.25 5.25 0 01-2.24 2.24l-2.5 1.39a.75.75 0 000 1.28l2.5 1.39a5.25 5.25 0 012.24 2.24l1.39 2.5a.75.75 0 001.28 0l1.39-2.5a5.25 5.25 0 012.24-2.24l2.5-1.39a.75.75 0 000-1.28l-2.5-1.39a5.25 5.25 0 01-2.24-2.24l-1.39-2.5zM21.5 3a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0121.5 3zM18.5 18a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0118.5 18z" />
+                                </svg>
+                                Ingeniero Informático Full Stack
+                            </h3>
+                        </Link>
+                        <Link href="/sobre-mi?master=experiencia&role=techlead">
+                            <h3 className="inline-flex items-center gap-1.5 lg:gap-2 px-3 lg:px-4 py-2 rounded-full border border-blue-500/40 bg-[#081324] text-blue-100 font-semibold text-xs lg:text-[13px] shadow-[0_0_15px_rgba(59,130,246,0.15)] whitespace-nowrap hover:bg-blue-500/20 cursor-pointer transition-colors duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-blue-400 shrink-0">
+                                    <path d="M11.64 5.23a.75.75 0 00-1.28 0l-1.39 2.5a5.25 5.25 0 01-2.24 2.24l-2.5 1.39a.75.75 0 000 1.28l2.5 1.39a5.25 5.25 0 012.24 2.24l1.39 2.5a.75.75 0 001.28 0l1.39-2.5a5.25 5.25 0 012.24-2.24l2.5-1.39a.75.75 0 000-1.28l-2.5-1.39a5.25 5.25 0 01-2.24-2.24l-1.39-2.5zM21.5 3a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0121.5 3zM18.5 18a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0118.5 18z" />
+                                </svg>
+                                Tech Lead
+                            </h3>
+                        </Link>
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}

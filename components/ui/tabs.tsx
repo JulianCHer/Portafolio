@@ -16,6 +16,7 @@ export const Tabs = ({
   tabClassName,
   contentClassName,
   propId = "tabs",
+  defaultActiveValue,
 }: {
   tabs: Tab[];
   containerClassName?: string;
@@ -23,8 +24,11 @@ export const Tabs = ({
   tabClassName?: string;
   contentClassName?: string;
   propId?: string;
+  defaultActiveValue?: string;
 }) => {
-  const [active, setActive] = useState<Tab>(tabs[0]);
+  const [active, setActive] = useState<Tab>(
+    defaultActiveValue ? tabs.find(t => t.value === defaultActiveValue) || tabs[0] : tabs[0]
+  );
   const [hoveringTab, setHoveringTab] = useState<string | null>(null);
 
   return (

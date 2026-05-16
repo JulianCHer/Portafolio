@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Tabs } from "@/components/ui/tabs";
 import { Dock } from "@/components/ui/dock";
@@ -173,34 +174,35 @@ const rolesTabs = roles.map(role => ({
     )
 }));
 
-const masterTabs = [
-    {
-        title: <div className="flex items-center gap-2"><FaCode className="w-5 h-5 text-blue-400" /> <span>Arsenal Tecnológico</span></div>,
-        value: "arsenal",
-        content: (
-            <div className="w-full flex flex-col items-center w-full max-w-5xl">
-                <Tabs tabs={techTabs} propId="tech" />
-            </div>
-        )
-    },
-    {
-        title: <div className="flex items-center gap-2"><FaBriefcase className="w-5 h-5 text-purple-400" /> <span>Roles y Experiencia</span></div>,
-        value: "experiencia",
-        content: (
-            <div className="w-full flex flex-col items-center w-full max-w-5xl">
-                <Tabs tabs={rolesTabs} propId="roles" />
-            </div>
-        )
-    }
-];
+function AboutMeContent() {
+    const searchParams = useSearchParams();
+    const masterParam = searchParams.get("master") || "arsenal";
+    const roleParam = searchParams.get("role") || "ingeniero";
 
-export default function AboutMe() {
+    const masterTabs = [
+        {
+            title: <div className="flex items-center gap-2"><FaCode className="w-5 h-5 text-blue-400" /> <span>Arsenal Tecnológico</span></div>,
+            value: "arsenal",
+            content: (
+                <div className="w-full flex flex-col items-center w-full max-w-5xl">
+                    <Tabs tabs={techTabs} propId="tech" />
+                </div>
+            )
+        },
+        {
+            title: <div className="flex items-center gap-2"><FaBriefcase className="w-5 h-5 text-purple-400" /> <span>Roles y Experiencia</span></div>,
+            value: "experiencia",
+            content: (
+                <div className="w-full flex flex-col items-center w-full max-w-5xl">
+                    <Tabs key={roleParam} tabs={rolesTabs} propId="roles" defaultActiveValue={roleParam} />
+                </div>
+            )
+        }
+    ];
+
     return (
         <section id="sobre-mi" className="relative w-full min-h-screen py-24 px-6 lg:px-12 flex flex-col items-center border-t border-white/[0.05]">
             <div className="max-w-5xl mx-auto w-full flex flex-col items-center">
-
-
-
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -208,10 +210,21 @@ export default function AboutMe() {
                     transition={{ duration: 0.6, delay: 0.1 }}
                     className="w-full flex flex-col items-center mb-24"
                 >
-                    <Tabs tabs={masterTabs} propId="master" containerClassName="bg-white/[0.03] border border-white/10 rounded-full p-2 shadow-lg mb-2" tabClassName="px-8 py-3 text-base lg:text-lg" />
+                    <Tabs key={masterParam} tabs={masterTabs} propId="master" defaultActiveValue={masterParam} containerClassName="bg-white/[0.03] border border-white/10 rounded-full p-2 shadow-lg mb-2" tabClassName="px-8 py-3 text-base lg:text-lg" />
                 </motion.div>
-
             </div>
         </section>
+    );
+}
+
+export default function AboutMe() {
+    return (
+        <Suspense fallback={
+            <section id="sobre-mi" className="relative w-full min-h-screen py-24 flex items-center justify-center">
+                <div className="text-white">Cargando...</div>
+            </section>
+        }>
+            <AboutMeContent />
+        </Suspense>
     );
 }
