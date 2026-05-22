@@ -60,9 +60,9 @@ export default function Presentation() {
                             className={`absolute z-20 flex items-center justify-center w-10 h-10 lg:w-14 lg:h-14 rounded-full backdrop-blur-md border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] cursor-pointer transition-colors ${icon.bgClass || "bg-white/5 hover:bg-white/10"}`}
                             style={{
                                 top: icon.top,
-                                bottom: icon.bottom,
-                                left: icon.left,
-                                right: icon.right,
+                                bottom: (icon as any).bottom,
+                                left: (icon as any).left,
+                                right: (icon as any).right,
                             }}
                             initial={{ opacity: 0, scale: 0 }}
                             animate={{
