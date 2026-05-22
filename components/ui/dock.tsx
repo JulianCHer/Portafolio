@@ -9,7 +9,7 @@ export const Dock = ({ items }: { items: { title: string; icon: React.ReactNode 
     <motion.div
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
-      className="mx-auto flex h-[90px] items-end gap-3 lg:gap-4 px-4 lg:px-8 pb-3"
+      className="mx-auto flex flex-wrap justify-center h-auto min-h-[90px] items-end gap-3 lg:gap-4 px-4 lg:px-8 pb-3"
     >
       {items.map((item, i) => (
         <DockIcon key={i} mouseX={mouseX} item={item} />

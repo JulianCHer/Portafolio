@@ -1,12 +1,167 @@
+"use client";
+
 import Navbar from "../../../components/Navbar";
+import dynamic from "next/dynamic";
+const Safari = dynamic(() => import("@/components/magicui/safari").then(mod => mod.Safari), { ssr: false });
+const Android = dynamic(() => import("@/components/magicui/android").then(mod => mod.Android), { ssr: false });
+import { Dock } from "@/components/ui/dock";
+import { motion } from "framer-motion";
+import { FaVuejs } from "react-icons/fa";
+import { SiLaravel, SiOpenai, SiTailwindcss } from "react-icons/si";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function SistemaDeBonos() {
+    const { t } = useLanguage();
+    
+    const renderHighlightedText = (text: string) => {
+        return text.split('**').map((part, i) => 
+            i % 2 === 1 ? <span key={i} className="text-white font-semibold">{part}</span> : part
+        );
+    };
+    const technologies = [
+        { name: "Vue.js", icon: FaVuejs, color: "text-emerald-500" },
+        { name: "Laravel", icon: SiLaravel, color: "text-red-500" },
+        { name: "Codex AI", icon: SiOpenai, color: "text-teal-400" },
+        { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
+    ];
+
     return (
-        <main className="min-h-screen pt-24 px-6 lg:px-12 flex flex-col items-center">
+        <main className="min-h-screen pt-24 px-6 lg:px-12 flex flex-col items-center overflow-x-hidden bg-transparent selection:bg-blue-500/30">
             <Navbar />
-            <div className="max-w-4xl mx-auto w-full mt-10">
-                <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">Sistema de Bonos</h1>
-                <p className="text-gray-400 text-lg">Página en construcción. Aquí se detallará la arquitectura y los desafíos del Sistema de Bonos.</p>
+            
+            <div className="max-w-7xl mx-auto w-full mt-10 space-y-20 pb-32">
+                
+                <section className="flex flex-col items-center text-center w-full">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="flex flex-col items-center justify-center w-full text-center"
+                    >
+                        <span className="px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-white text-sm font-medium tracking-wide mb-4 inline-block">
+                            {t("project.tag")}
+                        </span>
+                        <h1 className="text-6xl lg:text-7xl font-extrabold text-center text-white pb-2 w-full leading-tight">
+                            {t("projects.bonos.title")}
+                        </h1>
+                    </motion.div>
+                </section>
+
+                <section className="flex flex-col xl:flex-row items-center justify-between gap-16 w-full">
+                    
+                    <div className="flex flex-col items-center text-center xl:items-start xl:text-left space-y-8 w-full xl:w-5/12">
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                            className="text-gray-400 text-lg max-w-xl leading-relaxed text-justify"
+                        >
+                            {renderHighlightedText(t("projects.bonos.desc"))}
+                        </motion.p>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                            className="mt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md w-full max-w-xl hover:bg-white/10 transition-colors group/card"
+                        >
+                            <div className="p-3 bg-blue-500/20 rounded-full text-blue-400 group-hover/card:scale-110 transition-transform">
+                                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                </svg>
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-sm font-medium text-gray-400">{t("project.deploy.title")}</span>
+                                <a 
+                                    href="https://bonos.maviventas.com" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="text-white font-bold text-lg hover:text-blue-400 transition-colors flex items-center gap-2 group/link"
+                                >
+                                    bonos.maviventas.com
+                                    <svg className="w-4 h-4 opacity-50 group-hover/link:opacity-100 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </motion.div>
+
+                        <motion.div 
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                            className="pt-4"
+                        >
+                            <Dock items={technologies.map(tech => ({
+                                title: tech.name,
+                                icon: <tech.icon className={`w-1/2 h-1/2 ${tech.color} drop-shadow-md`} />
+                            }))} />
+                        </motion.div>
+                    </div>
+
+                    <motion.div 
+                        initial={{ opacity: 0, x: 40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 1, type: "spring", bounce: 0.4 }}
+                        className="w-full xl:w-7/12 flex flex-col items-center"
+                    >
+                        <motion.div 
+                            whileHover={{ scale: 1.02 }}
+                            transition={{ duration: 0.4 }}
+                            className="w-full relative group"
+                        >
+                            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-sky-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                            <Safari
+                                url="sistemadebonos.com"
+                                className="w-full h-auto shadow-2xl relative"
+                                videoSrc="/funcionbonos.mp4" 
+                            />
+                        </motion.div>
+                    </motion.div>
+                </section>
+
+                <motion.section 
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 1, type: "spring", bounce: 0.4 }}
+                    className="w-full flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24"
+                >
+                    {/* Device */}
+                    <motion.div 
+                        whileHover={{ y: -10 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                        className="relative w-full max-w-[240px] shrink-0 mx-auto md:mx-0"
+                    >
+                        <div className="absolute -inset-4 bg-gradient-to-br from-sky-500 to-blue-600 rounded-full blur-[100px] opacity-30"></div>
+                        <Android
+                            src="/respobonos.png" 
+                            className="w-full h-auto shadow-2xl relative z-10"
+                        />
+                    </motion.div>
+
+                    <div className="max-w-md text-center md:text-left">
+                        <div className="inline-flex items-center justify-center p-3 bg-blue-500/10 rounded-2xl text-blue-400 mb-6 border border-blue-500/20">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                        </div>
+                        <h2 className="text-3xl font-bold text-white mb-6">{t("project.responsive.title")}</h2>
+                        <p className="text-gray-400 text-lg leading-relaxed mb-6 text-justify">
+                            {t("projects.bonos.responsive.desc")}
+                        </p>
+                        <ul className="space-y-3 text-left">
+                            {[t("project.responsive.feat1"), t("project.responsive.feat2"), t("project.responsive.feat3")].map((item, i) => (
+                                <li key={i} className="flex items-center gap-3 text-gray-300">
+                                    <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </motion.section>
+
             </div>
         </main>
     );

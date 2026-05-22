@@ -5,13 +5,15 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import photo from "../public/profile3.png";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Presentation() {
     const [hoveredContact, setHoveredContact] = useState<string | null>(null);
+    const { t } = useLanguage();
     return (
         <section className="relative w-full min-h-screen lg:h-screen overflow-x-hidden lg:overflow-hidden pt-24 lg:pt-14 pb-12 lg:pb-0">
             <div className="max-w-7xl mx-auto px-6 lg:px-12 h-full flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12 lg:gap-16 relative z-10">
-                <div className="image relative flex justify-center items-end lg:items-center w-full lg:w-[40%] order-1 lg:order-2 h-[450px] sm:h-[600px] lg:h-full mt-4 lg:mt-0">
+                <div className="image relative flex justify-center items-end lg:items-center w-full lg:w-[40%] order-1 lg:order-2 h-[350px] sm:h-[450px] lg:h-full mt-4 lg:mt-0">
 
                     <motion.div
                         initial={{ opacity: 0, filter: "blur(10px)" }}
@@ -22,6 +24,7 @@ export default function Presentation() {
                         <Image
                             src={photo}
                             quality={100}
+                            priority={true}
                             alt="Profile-photo"
                             className="w-auto h-auto max-h-full max-w-full"
                             style={{
@@ -80,7 +83,7 @@ export default function Presentation() {
 
 
                 <div className="information flex flex-col justify-center items-center lg:items-start w-full lg:w-[55%] z-10 order-2 lg:order-1 py-8 lg:py-0 text-center lg:text-left">
-                    <h1 className="uppercase font-bold text-[36px] lg:text-[50px] flex flex-wrap justify-center lg:justify-start">
+                    <h1 className="uppercase font-bold text-4xl sm:text-5xl lg:text-[50px] flex flex-wrap justify-center lg:justify-start">
                         {Array.from("Julián Hernandez").map((letter, index) => (
                             <motion.span
                                 key={index}
@@ -103,7 +106,7 @@ export default function Presentation() {
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-blue-400 shrink-0">
                                     <path d="M11.64 5.23a.75.75 0 00-1.28 0l-1.39 2.5a5.25 5.25 0 01-2.24 2.24l-2.5 1.39a.75.75 0 000 1.28l2.5 1.39a5.25 5.25 0 012.24 2.24l1.39 2.5a.75.75 0 001.28 0l1.39-2.5a5.25 5.25 0 012.24-2.24l2.5-1.39a.75.75 0 000-1.28l-2.5-1.39a5.25 5.25 0 01-2.24-2.24l-1.39-2.5zM21.5 3a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0121.5 3zM18.5 18a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0118.5 18z" />
                                 </svg>
-                                CEO de Lazarus Tech
+                                {t("presentation.roles.ceo")}
                             </h3>
                         </Link>
                         <Link href="/sobre-mi?master=experiencia&role=ingeniero">
@@ -111,7 +114,7 @@ export default function Presentation() {
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-blue-400 shrink-0">
                                     <path d="M11.64 5.23a.75.75 0 00-1.28 0l-1.39 2.5a5.25 5.25 0 01-2.24 2.24l-2.5 1.39a.75.75 0 000 1.28l2.5 1.39a5.25 5.25 0 012.24 2.24l1.39 2.5a.75.75 0 001.28 0l1.39-2.5a5.25 5.25 0 012.24-2.24l2.5-1.39a.75.75 0 000-1.28l-2.5-1.39a5.25 5.25 0 01-2.24-2.24l-1.39-2.5zM21.5 3a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0121.5 3zM18.5 18a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0118.5 18z" />
                                 </svg>
-                                Ingeniero Informático Full Stack
+                                {t("presentation.roles.engineer")}
                             </h3>
                         </Link>
                         <Link href="/sobre-mi?master=experiencia&role=techlead">
@@ -119,7 +122,7 @@ export default function Presentation() {
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-blue-400 shrink-0">
                                     <path d="M11.64 5.23a.75.75 0 00-1.28 0l-1.39 2.5a5.25 5.25 0 01-2.24 2.24l-2.5 1.39a.75.75 0 000 1.28l2.5 1.39a5.25 5.25 0 012.24 2.24l1.39 2.5a.75.75 0 001.28 0l1.39-2.5a5.25 5.25 0 012.24-2.24l2.5-1.39a.75.75 0 000-1.28l-2.5-1.39a5.25 5.25 0 01-2.24-2.24l-1.39-2.5zM21.5 3a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0121.5 3zM18.5 18a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0118.5 18z" />
                                 </svg>
-                                Tech Lead
+                                {t("presentation.roles.techlead")}
                             </h3>
                         </Link>
                     </motion.div>
@@ -129,7 +132,7 @@ export default function Presentation() {
                         transition={{ duration: 0.6, delay: 1.5 }}
                         className="description text-justify max-w-lg"
                     >
-                        <p className="text-gray-300 text-sm lg:text-base">No solo escribo código, diseño soluciones digitales que transforman la operación de tu negocio. Especialista en automatizar procesos complejos, conectar sistemas empresariales en tiempo real y liderar equipos técnicos hacia entregas eficientes.</p>
+                        <p className="text-gray-300 text-sm lg:text-base">{t("presentation.description")}</p>
                     </motion.div>
 
                     {/* Botones de Contacto */}

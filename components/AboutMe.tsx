@@ -95,93 +95,96 @@ const techTabs = [
     }
 ];
 
-const roles = [
-    {
-        id: "ingeniero",
-        title: "Ingeniero Full Stack",
-        description: (
-            <div className="text-justify">
-                <p className="mb-6 text-justify text-gray-200">
-                    Ingeniero Informático Full Stack graduado de la AUNAR. Con 5 años de trayectoria desarrollando soluciones web a medida, combinando más de 3 años de experiencia corporativa con proyectos independientes de alto impacto.
-                </p>
-                <ul className="list-none space-y-4">
-                    <li className="relative pl-6">
-                        <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
-                        <strong className="text-white">Experiencia en Agencia DROI SAS:</strong> Como desarrollador a cargo de módulos críticos en el sistema base GESADMIN. Diseñé e implementé un sistema de control de acceso automatizado con lógicas complejas (mensual, quincenal y por turnos) y desarrollé el módulo de transformaciones y materia prima para control de producción.
-                    </li>
-                    <li className="relative pl-6">
-                        <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
-                        <strong className="text-white">Enfoque Freelance (5 años - Presente):</strong> Arquitectura y despliegue end-to-end de aplicativos web robustos, optimizando la gestión y operación de clientes empresariales.
-                    </li>
-                </ul>
-            </div>
-        )
-    },
-    {
-        id: "ceo",
-        title: "CEO Lazarus Tech",
-        description: (
-            <div className="text-justify">
-                <p className="mb-6 text-justify text-gray-200">
-                    <strong>Lazarus Tech</strong> es mi firma de desarrollo independiente de tecnológica a medida. Nos diferenciamos por mantener un canal directo <strong>cliente - proveedor</strong>, garantizando que cada opinión, requerimiento o PQRS sea gestionado con total agilidad bajo los más altos estándares de calidad del mercado. No buscamos ser un proveedor técnico temporal, sino el <strong>aliado estratégico</strong> que acompaña la evolución y el éxito de su negocio en cada etapa del camino.
-                    <br></br><br></br>Como desarrollador líder detrás de este ecosistema, he desplegado soluciones de gran envergadura para clientes clave en la región, entre los que destacan:
-                </p>
-                <ul className="list-none space-y-4">
-                    <li className="relative pl-6">
-                        <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
-                        <strong className="text-white">Inversiones del Meta:</strong> Arquitectura y automatización de su Sistema de Gestión de Sorteos y Bonos, una plataforma transaccional que automatiza la distribución y validación de premios basados en bonos vendidos.
-                    </li>
-                    <li className="relative pl-6">
-                        <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
-                        <strong className="text-white">CEACAR:</strong> Diseño, optimización y despliegue de su plataforma web corporativa, mejorando su presencia digital y captación de clientes.
-                    </li>
-                </ul>
-            </div>
-        )
-    },
-    {
-        id: "techlead",
-        title: "Tech Lead",
-        description: (
-            <div className="text-justify">
-                <p className="mb-6 text-justify text-gray-200">
-                    En Agencia DROI SAS, lideré equipos de desarrollo multifuncionales para el diseño, optimización y despliegue de plataformas empresariales críticas dentro del ecosistema corporativo. Entre mis principales logros dirigiendo personal destacan:
-                </p>
-                <ul className="list-none space-y-4">
-                    <li className="relative pl-6">
-                        <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
-                        <strong className="text-white">GESAGEN (Sistema de Agendamiento B2B):</strong> Diseñé e implementé el sistema para la Rueda de Negocios de la ANDI en Bogotá. Diseñé una lógica de validación automática que coordinó más de 50 sesiones simultáneas entre vendedores y compradores, expandiendo alianzas comerciales y reduciendo los conflictos de agenda en un 60%.
-                    </li>
-                    <li className="relative pl-6">
-                        <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
-                        <strong className="text-white">GESPARKING (Gestor de Parqueadero Corporativo):</strong> Dirigí el equipo técnico encargado de la reingeniería y optimización del software. Supervisé la normalización completa de la base de datos relacional, lo que eliminó la redundancia de datos y mejoró el rendimiento de las consultas SQL en un 50%.
-                    </li>
-                </ul>
-            </div>
-        )
-    }
-];
-
-const rolesTabs = roles.map(role => ({
-    title: role.title,
-    value: role.id,
-    content: (
-        <div className="w-full max-w-4xl bg-white/[0.01] border border-white/[0.05] rounded-3xl p-8 lg:p-12 flex flex-col items-center justify-start relative">
-            <div className="text-gray-300 text-base lg:text-lg leading-relaxed lg:leading-loose max-w-4xl mx-auto font-medium text-justify">
-                {role.description}
-            </div>
-        </div>
-    )
-}));
+import { useLanguage } from "@/context/LanguageContext";
 
 function AboutMeContent() {
     const searchParams = useSearchParams();
     const masterParam = searchParams.get("master") || "arsenal";
     const roleParam = searchParams.get("role") || "ingeniero";
+    const { t } = useLanguage();
+
+    const roles = [
+        {
+            id: "ingeniero",
+            title: t("about.role.engineer.title"),
+            description: (
+                <div className="text-justify">
+                    <p className="mb-6 text-justify text-gray-200">
+                        {t("about.role.engineer.desc1")}
+                    </p>
+                    <ul className="list-none space-y-4">
+                        <li className="relative pl-6">
+                            <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
+                            <strong className="text-white">{t("about.role.engineer.exp1.title")}</strong> {t("about.role.engineer.exp1.desc")}
+                        </li>
+                        <li className="relative pl-6">
+                            <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
+                            <strong className="text-white">{t("about.role.engineer.exp2.title")}</strong> {t("about.role.engineer.exp2.desc")}
+                        </li>
+                    </ul>
+                </div>
+            )
+        },
+        {
+            id: "ceo",
+            title: t("about.role.ceo.title"),
+            description: (
+                <div className="text-justify">
+                    <p className="mb-6 text-justify text-gray-200">
+                        <strong>Primal Tech</strong> {t("about.role.ceo.desc1")} <strong>{t("about.role.ceo.desc2")}</strong>{t("about.role.ceo.desc3")} <strong>{t("about.role.ceo.desc4")}</strong> {t("about.role.ceo.desc5")}
+                        <br></br><br></br>{t("about.role.ceo.desc6")}
+                    </p>
+                    <ul className="list-none space-y-4">
+                        <li className="relative pl-6">
+                            <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
+                            <strong className="text-white">{t("about.role.ceo.exp1.title")}</strong> {t("about.role.ceo.exp1.desc")}
+                        </li>
+                        <li className="relative pl-6">
+                            <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
+                            <strong className="text-white">{t("about.role.ceo.exp2.title")}</strong> {t("about.role.ceo.exp2.desc")}
+                        </li>
+                    </ul>
+                </div>
+            )
+        },
+        {
+            id: "techlead",
+            title: t("about.role.techlead.title"),
+            description: (
+                <div className="text-justify">
+                    <p className="mb-6 text-justify text-gray-200">
+                        {t("about.role.techlead.desc1")}
+                    </p>
+                    <ul className="list-none space-y-4">
+                        <li className="relative pl-6">
+                            <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
+                            <strong className="text-white">{t("about.role.techlead.exp1.title")}</strong> {t("about.role.techlead.exp1.desc")}
+                        </li>
+                        <li className="relative pl-6">
+                            <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
+                            <strong className="text-white">{t("about.role.techlead.exp2.title")}</strong> {t("about.role.techlead.exp2.desc")}
+                        </li>
+                    </ul>
+                </div>
+            )
+        }
+    ];
+
+    const rolesTabs = roles.map(role => ({
+        title: role.title,
+        value: role.id,
+        content: (
+            <div className="w-full max-w-4xl bg-white/[0.01] border border-white/[0.05] rounded-3xl p-8 lg:p-12 flex flex-col items-center justify-start relative">
+                <div className="text-gray-300 text-base lg:text-lg leading-relaxed lg:leading-loose max-w-4xl mx-auto font-medium text-justify">
+                    {role.description}
+                </div>
+            </div>
+        )
+    }));
 
     const masterTabs = [
         {
-            title: <div className="flex items-center gap-2"><FaCode className="w-5 h-5 text-blue-400" /> <span>Arsenal Tecnológico</span></div>,
+            title: <div className="flex items-center gap-2"><FaCode className="w-5 h-5 text-blue-400" /> <span>{t("about.arsenal.title")}</span></div>,
             value: "arsenal",
             content: (
                 <div className="w-full flex flex-col items-center w-full max-w-5xl">
@@ -190,7 +193,7 @@ function AboutMeContent() {
             )
         },
         {
-            title: <div className="flex items-center gap-2"><FaBriefcase className="w-5 h-5 text-purple-400" /> <span>Roles y Experiencia</span></div>,
+            title: <div className="flex items-center gap-2"><FaBriefcase className="w-5 h-5 text-purple-400" /> <span>{t("about.roles.title")}</span></div>,
             value: "experiencia",
             content: (
                 <div className="w-full flex flex-col items-center w-full max-w-5xl">
