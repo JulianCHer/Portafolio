@@ -18,7 +18,7 @@ export default function EleccionesColombia() {
             i % 2 === 1 ? <span key={i} className="text-white font-semibold">{part}</span> : part
         );
     };
-    // Definimos las tecnologías
+
     const technologies = [
         { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
         { name: "React", icon: FaReact, color: "text-blue-400" },
@@ -32,7 +32,6 @@ export default function EleccionesColombia() {
             
             <div className="max-w-7xl mx-auto w-full mt-10 space-y-20 pb-32">
                 
-                {/* Title Section */}
                 <section className="flex flex-col items-center text-center w-full pt-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -49,10 +48,8 @@ export default function EleccionesColombia() {
                     </motion.div>
                 </section>
 
-                {/* Combined Description & Desktop View */}
                 <section className="flex flex-col xl:flex-row items-center justify-between gap-16 w-full">
                     
-                    {/* Left Side: Desc & Dock */}
                     <div className="flex flex-col items-center text-center xl:items-start xl:text-left space-y-8 w-full xl:w-5/12">
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -64,7 +61,6 @@ export default function EleccionesColombia() {
                         </motion.p>
 
                         <div className="flex flex-col gap-4 w-full max-w-xl">
-                            {/* Deploy Link */}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -106,7 +102,6 @@ export default function EleccionesColombia() {
                         </motion.div>
                     </div>
 
-                    {/* Right Side: Safari */}
                     <motion.div 
                         initial={{ opacity: 0, x: 40 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -129,7 +124,6 @@ export default function EleccionesColombia() {
                     </motion.div>
                 </section>
 
-                {/* Responsive View (Android Component) */}
                 <motion.section 
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -137,7 +131,6 @@ export default function EleccionesColombia() {
                     transition={{ duration: 1, type: "spring", bounce: 0.4 }}
                     className="w-full flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24"
                 >
-                    {/* Device */}
                     <motion.div 
                         whileHover={{ y: -10 }}
                         transition={{ type: "spring", stiffness: 300 }}
@@ -150,7 +143,6 @@ export default function EleccionesColombia() {
                         />
                     </motion.div>
 
-                    {/* Text content for mobile */}
                     <div className="max-w-md text-center md:text-left">
                         <div className="inline-flex items-center justify-center p-3 bg-blue-500/10 rounded-2xl text-blue-400 mb-6 border border-blue-500/20">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>

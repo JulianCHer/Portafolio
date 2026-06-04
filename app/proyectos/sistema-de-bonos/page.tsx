@@ -128,7 +128,6 @@ export default function SistemaDeBonos() {
                     transition={{ duration: 1, type: "spring", bounce: 0.4 }}
                     className="w-full flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24"
                 >
-                    {/* Device */}
                     <motion.div 
                         whileHover={{ y: -10 }}
                         transition={{ type: "spring", stiffness: 300 }}
