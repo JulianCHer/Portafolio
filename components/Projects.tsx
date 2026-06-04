@@ -21,6 +21,11 @@ const projectsData = [
         key: "projects.hotel.title",
         slug: "sistema-de-gestion-de-hotel",
         image: "/hotel.png", // Placeholder
+    },
+    {
+        key: "projects.elections.title",
+        slug: "elecciones-colombia-2026",
+        image: "/elections.png",
     }
 ];
 
@@ -58,6 +63,8 @@ export default function Projects() {
                     src={project.image}
                     alt={t(project.key)}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
+                    priority={index === 0}
                     className="object-contain transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/20"></div>
@@ -114,6 +121,8 @@ export default function Projects() {
                     src={project.image}
                     alt={project.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
+                    priority={index === 0}
                     className="object-contain transition-transform duration-500 group-hover:scale-105"
                 />
 

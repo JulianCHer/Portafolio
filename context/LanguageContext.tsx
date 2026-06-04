@@ -27,6 +27,7 @@ const translations: Record<Language, Translations> = {
     "projects.bonos.title": "Sistema de Bonos",
     "projects.licencias.title": "Sistema de Licencias",
     "projects.hotel.title": "Sistema de Gestión de Hotel",
+    "projects.elections.title": "Elecciones Colombia 2026",
 
     // AboutMe Tabs
     "about.arsenal.title": "Arsenal Tecnológico",
@@ -78,6 +79,10 @@ const translations: Record<Language, Translations> = {
     // Hotel
     "projects.hotel.desc": "Plataforma integral para la gestión de reservas, habitaciones y huéspedes. Este sistema permite a los administradores llevar el control de forma segura y eficiente, mientras el staff del hotel disfruta de una interfaz intuitiva para su labor diaria. (Reemplazar con la descripción final).",
     "projects.hotel.responsive.desc": "Sabemos que los usuarios necesitan acceder al sistema desde cualquier lugar. Por eso, la plataforma se adapta perfectamente a dispositivos móviles, ofreciendo una experiencia nativa fluida, sin perder ninguna de las funcionalidades críticas presentes en la versión de escritorio.",
+
+    // Elecciones Colombia 2026
+    "projects.elections.desc": "Desarrollé una **landing page interactiva** para las elecciones presidenciales de Colombia 2026 utilizando **Next.js** y **React** en el frontend, estilizada con **Tailwind CSS**. Implementé un diseño **moderno, interactivo y de alto impacto visual** enfocado en la experiencia del usuario, optimizando los tiempos de carga y la visualización de los candidatos. Mediante el **uso de los asistentes de IA Claude y Gemini**, logré optimizar el flujo de trabajo y completar el desarrollo en un **tiempo récord de solo 12 horas**. La aplicación fue desplegada en **Vercel**.",
+    "projects.elections.responsive.desc": "La interfaz cuenta con un diseño móvil adaptativo e intuitivo, asegurando que todos los votantes puedan consultar las propuestas y la información de los candidatos de manera rápida desde cualquier dispositivo móvil o tablet.",
   },
   en: {
     // Navbar
@@ -97,6 +102,7 @@ const translations: Record<Language, Translations> = {
     "projects.bonos.title": "Bonus System",
     "projects.licencias.title": "License System",
     "projects.hotel.title": "Hotel Management System",
+    "projects.elections.title": "Colombia Elections 2026",
 
     // AboutMe Tabs
     "about.arsenal.title": "Tech Arsenal",
@@ -148,6 +154,10 @@ const translations: Record<Language, Translations> = {
     // Hotel
     "projects.hotel.desc": "Comprehensive platform for managing reservations, rooms, and guests. This system allows administrators to keep control securely and efficiently, while the hotel staff enjoys an intuitive interface for their daily work. (Replace with final description).",
     "projects.hotel.responsive.desc": "We know users need to access the system from anywhere. That's why the platform adapts perfectly to mobile devices, offering a fluid native experience without losing any of the critical functionalities present in the desktop version.",
+
+    // Elecciones Colombia 2026
+    "projects.elections.desc": "I developed an **interactive landing page** for the 2026 presidential elections in Colombia using **Next.js** and **React** on the frontend, styled with **Tailwind CSS**. I implemented a **modern, interactive, and high-impact visual design** focused on user experience, optimizing load times and candidate visualization. Through the **use of Claude and Gemini AI assistants**, I was able to optimize workflows and complete the development in a **record time of just 12 hours**. The application was deployed on **Vercel**.",
+    "projects.elections.responsive.desc": "The interface features an intuitive, mobile-responsive design, ensuring that all voters can quickly view candidate proposals and information from any mobile device or tablet.",
   }
 };
 
