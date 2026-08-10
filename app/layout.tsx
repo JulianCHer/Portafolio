@@ -4,6 +4,7 @@ import Image from "next/image";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import dynamic from "next/dynamic";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 const Meteors = dynamic(() => import("@/components/magicui/meteors").then((mod) => mod.Meteors));
 
 const geistSans = Geist({
@@ -49,6 +50,7 @@ export default function RootLayout({
           </div>
           {children}
         </LanguageProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
