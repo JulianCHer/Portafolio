@@ -7,8 +7,10 @@ const Android = dynamic(() => import("@/components/magicui/android").then(mod =>
 import { Dock } from "@/components/ui/dock";
 import { motion } from "framer-motion";
 import { FaVuejs } from "react-icons/fa";
-import { SiLaravel, SiOpenai, SiTailwindcss } from "react-icons/si";
+import { SiLaravel, SiOpenai, SiTailwindcss, SiPhp, SiMysql, SiJavascript } from "react-icons/si";
 import { useLanguage } from "@/context/LanguageContext";
+import BetaLink from "@/components/BetaLink";
+import { betaUrls } from "@/lib/betas";
 
 export default function SistemaDeBonos() {
     const { t } = useLanguage();
@@ -20,7 +22,10 @@ export default function SistemaDeBonos() {
     };
     const technologies = [
         { name: "Vue.js", icon: FaVuejs, color: "text-emerald-500" },
+        { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
+        { name: "PHP", icon: SiPhp, color: "text-indigo-400" },
         { name: "Laravel", icon: SiLaravel, color: "text-red-500" },
+        { name: "MySQL", icon: SiMysql, color: "text-blue-400" },
         { name: "Codex AI", icon: SiOpenai, color: "text-teal-400" },
         { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
     ];
@@ -97,6 +102,8 @@ export default function SistemaDeBonos() {
                                 icon: <tech.icon className={`w-1/2 h-1/2 ${tech.color} drop-shadow-md`} />
                             }))} />
                         </motion.div>
+
+                        <BetaLink url={betaUrls.bonos} />
                     </div>
 
                     <motion.div 

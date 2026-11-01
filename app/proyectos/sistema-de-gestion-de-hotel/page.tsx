@@ -7,8 +7,10 @@ const Iphone15Pro = dynamic(() => import("@/components/magicui/iphone-15-pro").t
 import { Dock } from "@/components/ui/dock";
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs } from "react-icons/fa";
-import { SiTailwindcss, SiTypescript, SiNextdotjs } from "react-icons/si";
+import { SiTailwindcss, SiTypescript, SiNextdotjs, SiPostgresql, SiExpress } from "react-icons/si";
 import { useLanguage } from "@/context/LanguageContext";
+import BetaLink from "@/components/BetaLink";
+import { betaUrls } from "@/lib/betas";
 
 export default function SistemaDeGestionDeHotel() {
     const { t } = useLanguage();
@@ -25,6 +27,8 @@ export default function SistemaDeGestionDeHotel() {
         { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
         { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-teal-400" },
         { name: "Node.js", icon: FaNodeJs, color: "text-green-500" },
+        { name: "Express", icon: SiExpress, color: "text-gray-300" },
+        { name: "PostgreSQL", icon: SiPostgresql, color: "text-sky-400" },
     ];
 
     return (
@@ -72,6 +76,8 @@ export default function SistemaDeGestionDeHotel() {
                                 icon: <tech.icon className={`w-1/2 h-1/2 ${tech.color} drop-shadow-md`} />
                             }))} />
                         </motion.div>
+
+                        <BetaLink url={betaUrls.hotel} />
                     </div>
 
                     <motion.div 

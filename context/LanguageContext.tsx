@@ -60,6 +60,34 @@ const translations: Record<Language, Translations> = {
     "about.role.techlead.exp2.title": "GESPARKING (Gestor de Parqueadero Corporativo):",
     "about.role.techlead.exp2.desc": "Dirigí el equipo técnico encargado de la reingeniería y optimización del software. Supervisé la normalización completa de la base de datos relacional, lo que eliminó la redundancia de datos y mejoró el rendimiento de las consultas SQL en un 50%.",
 
+    // Experiencia laboral
+    "about.role.work.title": "Experiencia laboral",
+    "about.work.1.role": "Cloud-Based Web Applications Developer",
+    "about.work.1.company": "Lucid Bot · Remoto",
+    "about.work.1.period": "Sept 2026 – Actualidad",
+    "about.work.1.desc": "Onboarding interactivo de punta a punta en React + TypeScript con API REST (Node/MySQL), integración de un agente de IA que automatiza tareas en las tiendas y mejoras de UX que redujeron el flujo de crear pedido de 11 a 4 pasos.",
+    "about.work.2.role": "Docente",
+    "about.work.2.company": "AUNAR Villavicencio · Presencial",
+    "about.work.2.period": "Ago 2026 – Actualidad",
+    "about.work.2.desc": "Diseño de contenidos y recursos para el aula virtual y enseñanza progresiva de la lógica de programación a aplicaciones con bases de datos, llevando a clase ejemplos de proyectos reales (APIs REST, PHP/Laravel, React/Next.js).",
+    "about.work.3.role": "Desarrollador Freelance · Primal Tech",
+    "about.work.3.company": "Autónomo · Remoto",
+    "about.work.3.period": "Ene 2021 – Actualidad",
+    "about.work.3.desc": "Soluciones web end-to-end para clientes empresariales, desde la arquitectura hasta el despliegue: un PMS hotelero con React, Next.js y Nest.js + TypeScript (35% menos de tiempo en gestión de reservas) y el sistema de sorteos y bonos de Inversiones del Meta con Vue.js y Laravel (facturación y distribución por WhatsApp Business API y correo 100% automatizadas).",
+    "about.work.4.role": "Desarrollador sénior",
+    "about.work.4.company": "Consuerte · Presencial",
+    "about.work.4.period": "May 2026 – Oct 2026",
+    "about.work.4.desc": "Mejoras en convenios, recaudo y reportes de la plataforma Autofile; integración del sistema comercial (PHP/PostgreSQL) con datáfonos Redeban para operar como corresponsal bancario y servicio local en Python que comunica el navegador con el datáfono por puerto serial.",
+    "about.work.5.role": "Desarrollador sénior",
+    "about.work.5.company": "Agencia DROI SAS · Presencial",
+    "about.work.5.period": "Ago 2022 – Mar 2026",
+    "about.work.5.desc": "Soluciones web escalables para clientes corporativos: integración REST bidireccional con SIIGO ERP (90% menos errores), control de acceso para más de 200 empleados (40% menos de tiempo de registro), agendamiento de la Rueda de Negocios ANDI y normalización de la base de datos de un parqueadero corporativo (50% más rápido en consultas SQL).",
+
+    // Betas de los proyectos
+    "projects.beta.cta": "Ver versión beta",
+    "projects.beta.note": "Versión de prueba en línea; los datos son ficticios.",
+    "projects.stack.title": "Lenguajes y tecnologías",
+
     // Project details (Shared)
     "project.tag": "Desarrollo Web & Backend",
     "project.deploy.title": "Despliegue en Producción",
@@ -73,11 +101,11 @@ const translations: Record<Language, Translations> = {
     "projects.bonos.responsive.desc": "La interfaz fue construida bajo un enfoque Mobile-First y completamente responsiva, asegurando que la gestión y venta de boletería sea intuitiva y accesible para cualquier tipo de usuario, sin importar las especificaciones del dispositivo técnico desde el cual operen.",
 
     // Licencias
-    "projects.licencias.desc": "Diseñé y desarrollé un **sistema centralizado de licenciamiento de software** para **proteger la propiedad intelectual** de Primal Tech y mitigar los riesgos de distribución no autorizada. Implementé un **modelo de cobro periódico (suscripciones)** que permite cotizar y gestionar la permanencia de los clientes de manera automatizada. La arquitectura fue construida utilizando **Laravel** en el backend y **Next.js (React)** en el frontend. Mediante el **uso avanzado de agentes de IA (Gemini y Claude)** para la optimización de consultas a bases de datos y refactorización arquitectónica, logré desplegar el sistema completo en un **tiempo récord de solo 2 semanas**.",
+    "projects.licencias.desc": "Diseñé y desarrollé un **sistema centralizado de licenciamiento de software** para **proteger la propiedad intelectual** de Primal Tech y mitigar los riesgos de distribución no autorizada. Implementé un **modelo de cobro periódico (suscripciones)** que permite cotizar y gestionar la permanencia de los clientes de manera automatizada. La arquitectura fue construida con **Next.js (React) y TypeScript**, **PostgreSQL** con SQL parametrizado y **licencias firmadas con Ed25519** que cada sistema cliente verifica sin depender de la red (migrada desde una primera versión en **Laravel**). Mediante el **uso avanzado de agentes de IA (Gemini y Claude)** para la optimización de consultas a bases de datos y refactorización arquitectónica, logré desplegar el sistema completo en un **tiempo récord de solo 2 semanas**.",
     "projects.licencias.responsive.desc": "Sabemos que los usuarios necesitan acceder al sistema desde cualquier lugar. Por eso, la plataforma se adapta perfectamente a dispositivos móviles, ofreciendo una experiencia nativa fluida, sin perder ninguna de las funcionalidades críticas presentes en la versión de escritorio.",
 
     // Hotel
-    "projects.hotel.desc": "Plataforma integral para la gestión de reservas, habitaciones y huéspedes. Este sistema permite a los administradores llevar el control de forma segura y eficiente, mientras el staff del hotel disfruta de una interfaz intuitiva para su labor diaria. (Reemplazar con la descripción final).",
+    "projects.hotel.desc": "Plataforma integral para la gestión de reservas, habitaciones y huéspedes. Este sistema permite a los administradores llevar el control de forma segura y eficiente, mientras el staff del hotel disfruta de una interfaz intuitiva para su labor diaria. Está construido con **Next.js** y **TypeScript** en el frontend y una API en **Node.js (Express)** sobre **PostgreSQL** con SQL parametrizado, **carga progresiva de datos** para que la interfaz responda de inmediato y **activación por licencia firmada** verificada contra mi Sistema de Licencias.",
     "projects.hotel.responsive.desc": "Sabemos que los usuarios necesitan acceder al sistema desde cualquier lugar. Por eso, la plataforma se adapta perfectamente a dispositivos móviles, ofreciendo una experiencia nativa fluida, sin perder ninguna de las funcionalidades críticas presentes en la versión de escritorio.",
 
     // Elecciones Colombia 2026
@@ -135,6 +163,34 @@ const translations: Record<Language, Translations> = {
     "about.role.techlead.exp2.title": "GESPARKING (Corporate Parking Manager):",
     "about.role.techlead.exp2.desc": "I directed the technical team in charge of software reengineering and optimization. I supervised the complete normalization of the relational database, which eliminated data redundancy and improved SQL query performance by 50%.",
 
+    // Work experience
+    "about.role.work.title": "Work experience",
+    "about.work.1.role": "Cloud-Based Web Applications Developer",
+    "about.work.1.company": "Lucid Bot · Remote",
+    "about.work.1.period": "Sep 2026 – Present",
+    "about.work.1.desc": "End-to-end interactive onboarding in React + TypeScript with a REST API (Node/MySQL), an AI agent integration that automates store tasks, and UX improvements that cut the order creation flow from 11 steps to 4.",
+    "about.work.2.role": "Lecturer",
+    "about.work.2.company": "AUNAR Villavicencio · On-site",
+    "about.work.2.period": "Aug 2026 – Present",
+    "about.work.2.desc": "Designing virtual classroom content and resources and teaching programming logic through to database-backed applications, bringing real-project examples to class (REST APIs, PHP/Laravel, React/Next.js).",
+    "about.work.3.role": "Freelance Developer · Primal Tech",
+    "about.work.3.company": "Self-employed · Remote",
+    "about.work.3.period": "Jan 2021 – Present",
+    "about.work.3.desc": "End-to-end web solutions for business clients, from architecture to production: a hotel PMS with React, Next.js and Nest.js + TypeScript (35% less time spent on reservations) and the raffle and bonus system for Inversiones del Meta with Vue.js and Laravel (billing and distribution 100% automated via WhatsApp Business API and email).",
+    "about.work.4.role": "Senior Developer",
+    "about.work.4.company": "Consuerte · On-site",
+    "about.work.4.period": "May 2026 – Oct 2026",
+    "about.work.4.desc": "Improvements to collections, reports and agreements in the Autofile platform; integration of the commercial system (PHP/PostgreSQL) with Redeban payment terminals to operate as a banking correspondent, plus a local Python service bridging the browser and the terminal over a serial port.",
+    "about.work.5.role": "Senior Developer",
+    "about.work.5.company": "Agencia DROI SAS · On-site",
+    "about.work.5.period": "Aug 2022 – Mar 2026",
+    "about.work.5.desc": "Scalable web solutions for corporate clients: bidirectional REST integration with SIIGO ERP (90% fewer errors), access control for 200+ employees (40% faster check-in), scheduling for the ANDI Business Matchmaking, and database normalization for a corporate parking system (50% faster SQL queries).",
+
+    // Project betas
+    "projects.beta.cta": "View beta version",
+    "projects.beta.note": "Online test version; all data is fictional.",
+    "projects.stack.title": "Languages & technologies",
+
     // Project details (Shared)
     "project.tag": "Web & Backend Development",
     "project.deploy.title": "Production Deployment",
@@ -148,11 +204,11 @@ const translations: Record<Language, Translations> = {
     "projects.bonos.responsive.desc": "The interface was built under a Mobile-First approach and is fully responsive, ensuring that ticket management and sales are intuitive and accessible for any type of user, regardless of the technical specifications of the device from which they operate.",
 
     // Licencias
-    "projects.licencias.desc": "I designed and developed a **centralized software licensing system** to **protect intellectual property** for Primal Tech and mitigate unauthorized distribution risks. I implemented a **recurring billing model (subscriptions)** that allows automating quotes and managing customer retention. The architecture was built using **Laravel** on the backend and **Next.js (React)** on the frontend. Through the **advanced use of AI agents (Gemini and Claude)** for database query optimization and architectural refactoring, I managed to deploy the entire system in a **record time of only 2 weeks**.",
+    "projects.licencias.desc": "I designed and developed a **centralized software licensing system** to **protect intellectual property** for Primal Tech and mitigate unauthorized distribution risks. I implemented a **recurring billing model (subscriptions)** that allows automating quotes and managing customer retention. The architecture was built with **Next.js (React) and TypeScript**, **PostgreSQL** with parameterized SQL and **Ed25519-signed licenses** that each client system verifies without depending on the network (migrated from a first version in **Laravel**). Through the **advanced use of AI agents (Gemini and Claude)** for database query optimization and architectural refactoring, I managed to deploy the entire system in a **record time of only 2 weeks**.",
     "projects.licencias.responsive.desc": "We know users need to access the system from anywhere. That's why the platform adapts perfectly to mobile devices, offering a fluid native experience without losing any of the critical functionalities present in the desktop version.",
 
     // Hotel
-    "projects.hotel.desc": "Comprehensive platform for managing reservations, rooms, and guests. This system allows administrators to keep control securely and efficiently, while the hotel staff enjoys an intuitive interface for their daily work. (Replace with final description).",
+    "projects.hotel.desc": "Comprehensive platform for managing reservations, rooms, and guests. This system allows administrators to keep control securely and efficiently, while the hotel staff enjoys an intuitive interface for their daily work. It is built with **Next.js** and **TypeScript** on the frontend and a **Node.js (Express)** API on **PostgreSQL** with parameterized SQL, **progressive data loading** so the interface responds instantly, and **signed-license activation** verified against my License System.",
     "projects.hotel.responsive.desc": "We know users need to access the system from anywhere. That's why the platform adapts perfectly to mobile devices, offering a fluid native experience without losing any of the critical functionalities present in the desktop version.",
 
     // Elecciones Colombia 2026
@@ -171,7 +227,6 @@ const LanguageContext = createContext<LanguageContextProps | undefined>(undefine
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("es");
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem("app-language") as Language;
@@ -181,7 +236,6 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       const browserLang = navigator.language.startsWith("en") ? "en" : "es";
       setLanguage(browserLang);
     }
-    setMounted(true);
   }, []);
 
   const changeLanguage = (lang: Language) => {
@@ -195,10 +249,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage: changeLanguage, t }}>
-      {/* Opacity transition to avoid hydration text mismatch flashes */}
-      <div style={{ opacity: mounted ? 1 : 0, transition: "opacity 0.2s ease-in-out" }}>
-        {children}
-      </div>
+      {children}
     </LanguageContext.Provider>
   );
 }

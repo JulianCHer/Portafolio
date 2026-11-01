@@ -7,8 +7,10 @@ const Android = dynamic(() => import("@/components/magicui/android").then(mod =>
 import { Dock } from "@/components/ui/dock";
 import { motion } from "framer-motion";
 import { FaReact } from "react-icons/fa";
-import { SiTailwindcss, SiTypescript, SiNextdotjs, SiLaravel } from "react-icons/si";
+import { SiTailwindcss, SiTypescript, SiNextdotjs, SiLaravel, SiPostgresql } from "react-icons/si";
 import { useLanguage } from "@/context/LanguageContext";
+import BetaLink from "@/components/BetaLink";
+import { betaUrls } from "@/lib/betas";
 
 export default function SistemaDeLicencias() {
     const { t } = useLanguage();
@@ -24,7 +26,8 @@ export default function SistemaDeLicencias() {
         { name: "React", icon: FaReact, color: "text-blue-400" },
         { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
         { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-teal-400" },
-        { name: "Laravel", icon: SiLaravel, color: "text-red-500" },
+        { name: "PostgreSQL", icon: SiPostgresql, color: "text-sky-400" },
+        { name: "Laravel (v1)", icon: SiLaravel, color: "text-red-500" },
     ];
 
     return (
@@ -72,6 +75,8 @@ export default function SistemaDeLicencias() {
                                 icon: <tech.icon className={`w-1/2 h-1/2 ${tech.color} drop-shadow-md`} />
                             }))} />
                         </motion.div>
+
+                        <BetaLink url={betaUrls.licencias} />
                     </div>
 
                     <motion.div 

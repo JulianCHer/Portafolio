@@ -23,7 +23,8 @@ export default function Presentation() {
                     >
                         <Image
                             src={photo}
-                            quality={100}
+                            quality={80}
+                            sizes="(max-width: 1024px) 90vw, 40vw"
                             priority={true}
                             alt="Profile-photo"
                             className="w-auto h-auto max-h-full max-w-full"

@@ -167,6 +167,22 @@ function AboutMeContent() {
                     </ul>
                 </div>
             )
+        },
+        {
+            id: "trayectoria",
+            title: t("about.role.work.title"),
+            description: (
+                <ul className="list-none space-y-6">
+                    {[1, 2, 3, 4, 5].map((n) => (
+                        <li key={n} className="relative pl-6">
+                            <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
+                            <strong className="text-white">{t(`about.work.${n}.role`)}</strong>
+                            <span className="block text-sm text-blue-300">{t(`about.work.${n}.company`)} · {t(`about.work.${n}.period`)}</span>
+                            <span className="block mt-1">{t(`about.work.${n}.desc`)}</span>
+                        </li>
+                    ))}
+                </ul>
+            )
         }
     ];
 

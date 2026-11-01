@@ -41,11 +41,12 @@ export default function RootLayout({
                 src="/backg2.jpg"
                 alt="Global Background"
                 fill
-                quality={100}
+                quality={60}
+                sizes="100vw"
                 priority={true}
                 className="object-cover opacity-30"
             />
-            <Meteors number={40} />
+            <Meteors number={15} />
           </div>
           {children}
         </LanguageProvider>
