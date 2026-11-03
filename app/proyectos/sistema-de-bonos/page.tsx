@@ -4,7 +4,7 @@ import Navbar from "../../../components/Navbar";
 import dynamic from "next/dynamic";
 const Safari = dynamic(() => import("@/components/magicui/safari").then(mod => mod.Safari), { ssr: false });
 const Android = dynamic(() => import("@/components/magicui/android").then(mod => mod.Android), { ssr: false });
-import { Dock } from "@/components/ui/dock";
+import { TechStack } from "@/components/ui/tech-stack";
 import { motion } from "framer-motion";
 import { FaVuejs } from "react-icons/fa";
 import { SiLaravel, SiOpenai, SiTailwindcss, SiPhp, SiMysql, SiJavascript } from "react-icons/si";
@@ -97,7 +97,7 @@ export default function SistemaDeBonos() {
                             transition={{ duration: 0.6, delay: 0.4 }}
                             className="pt-4"
                         >
-                            <Dock items={technologies.map(tech => ({
+                            <TechStack items={technologies.map(tech => ({
                                 title: tech.name,
                                 icon: <tech.icon className={`w-1/2 h-1/2 ${tech.color} drop-shadow-md`} />
                             }))} />

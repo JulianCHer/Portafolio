@@ -4,7 +4,7 @@ import Navbar from "../../../components/Navbar";
 import { Safari } from "../../../components/magicui/safari";
 import dynamic from "next/dynamic";
 const Iphone15Pro = dynamic(() => import("@/components/magicui/iphone-15-pro").then(mod => mod.Iphone15Pro), { ssr: false });
-import { Dock } from "@/components/ui/dock";
+import { TechStack } from "@/components/ui/tech-stack";
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import { SiTailwindcss, SiTypescript, SiNextdotjs, SiPostgresql, SiExpress } from "react-icons/si";
@@ -71,7 +71,7 @@ export default function SistemaDeGestionDeHotel() {
                             transition={{ duration: 0.6, delay: 0.4 }}
                             className="pt-4"
                         >
-                            <Dock items={technologies.map(tech => ({
+                            <TechStack items={technologies.map(tech => ({
                                 title: tech.name,
                                 icon: <tech.icon className={`w-1/2 h-1/2 ${tech.color} drop-shadow-md`} />
                             }))} />

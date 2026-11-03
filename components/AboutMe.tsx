@@ -100,7 +100,7 @@ import { useLanguage } from "@/context/LanguageContext";
 function AboutMeContent() {
     const searchParams = useSearchParams();
     const masterParam = searchParams.get("master") || "arsenal";
-    const roleParam = searchParams.get("role") || "ingeniero";
+    const roleParam = searchParams.get("role") || "trayectoria";
     const { t } = useLanguage();
 
     const roles = [
@@ -186,7 +186,12 @@ function AboutMeContent() {
         }
     ];
 
-    const rolesTabs = roles.map(role => ({
+    const orderedRoles = [
+        ...roles.filter(role => role.id === "trayectoria"),
+        ...roles.filter(role => role.id !== "trayectoria"),
+    ];
+
+    const rolesTabs = orderedRoles.map(role => ({
         title: role.title,
         value: role.id,
         content: (
