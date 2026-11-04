@@ -20,7 +20,7 @@ const projectsData = [
     {
         key: "projects.hotel.title",
         slug: "sistema-de-gestion-de-hotel",
-        image: "/hotel.png", // Placeholder
+        image: "/hotel.png",
     },
     {
         key: "projects.elections.title",

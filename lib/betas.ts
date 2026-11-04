@@ -2,5 +2,5 @@
 export const betaUrls = {
     bonos: "",
     licencias: "https://system-licenses.vercel.app",
-    hotel: "",
+    hotel: "https://hotel-system-seven-rho.vercel.app",
 };
