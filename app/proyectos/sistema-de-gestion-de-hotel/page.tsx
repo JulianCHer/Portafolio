@@ -96,7 +96,7 @@ export default function SistemaDeGestionDeHotel() {
                             <Safari
                                 url="sistemagestionhotel.com"
                                 className="w-full h-auto shadow-2xl relative"
-                                imageSrc="/hotel.png" 
+                                videoSrc="/funcionhotel.mp4" 
                             />
                         </motion.div>
                     </motion.div>
@@ -116,7 +116,7 @@ export default function SistemaDeGestionDeHotel() {
                     >
                         <div className="absolute -inset-4 bg-gradient-to-br from-sky-500 to-blue-600 rounded-full blur-[100px] opacity-30"></div>
                         <Iphone15Pro
-                            imageSrc="/respohotel.png" 
+                            videoSrc="/respohotel.mp4" 
                             className="shadow-2xl relative z-10"
                         />
                     </motion.div>

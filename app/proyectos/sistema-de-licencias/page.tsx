@@ -115,7 +115,7 @@ export default function SistemaDeLicencias() {
                     >
                         <div className="absolute -inset-4 bg-gradient-to-br from-sky-500 to-blue-600 rounded-full blur-[100px] opacity-30"></div>
                         <Android
-                            src="/respolicencias.png" 
+                            videoSrc="/respolicencias.mp4" 
                             className="w-full h-auto shadow-2xl relative z-10"
                         />
                     </motion.div>
