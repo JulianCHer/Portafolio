@@ -43,7 +43,7 @@ export default function Presentation() {
                         { name: "Laravel", src: "/laravel.svg", top: "38%", left: "2%", delay: 2.8 },
                         { name: "Vue.js", src: "/vue.svg", top: "48%", left: "10%", delay: 1 },
                         { name: "TypeScript", src: "/typescript.svg", top: "58%", left: "1%", delay: 1.4 },
-                        { name: "Java", src: "/java.svg", top: "68%", left: "10%", delay: 1.8 },
+                        { name: "Java", src: "/java.svg", top: "68%", posClass: "left-[1%] lg:-left-[10%]", delay: 1.8 },
                         { name: "CSS3", src: "/css.svg", top: "78%", left: "1%", delay: 2 },
                         { name: "WordPress", src: "/wordpress.svg", top: "88%", left: "10%", delay: 1.7 },
 
@@ -58,7 +58,7 @@ export default function Presentation() {
                         <motion.div
                             key={index}
                             title={icon.name}
-                            className={`absolute z-20 flex items-center justify-center w-10 h-10 lg:w-14 lg:h-14 rounded-full backdrop-blur-md border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] cursor-pointer transition-colors ${icon.bgClass || "bg-white/5 hover:bg-white/10"}`}
+                            className={`absolute z-20 flex items-center justify-center w-10 h-10 lg:w-14 lg:h-14 rounded-full backdrop-blur-md border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] cursor-pointer transition-colors ${icon.bgClass || "bg-white/5 hover:bg-white/10"} ${(icon as any).posClass || ""}`}
                             style={{
                                 top: icon.top,
                                 bottom: (icon as any).bottom,
