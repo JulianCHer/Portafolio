@@ -96,112 +96,49 @@ const techTabs = [
 ];
 
 import { useLanguage } from "@/context/LanguageContext";
+import { jobs, periodLabel, durationLabel } from "@/lib/experiencia";
 
 function AboutMeContent() {
     const searchParams = useSearchParams();
     const masterParam = searchParams.get("master") || "arsenal";
-    const roleParam = searchParams.get("role") || "trayectoria";
-    const { t } = useLanguage();
+    const roleParam = searchParams.get("role") || jobs[0].id;
+    const { t, language } = useLanguage();
 
-    const roles = [
-        {
-            id: "ingeniero",
-            title: t("about.role.engineer.title"),
-            description: (
-                <div className="text-justify">
-                    <p className="mb-6 text-justify text-gray-200">
-                        {t("about.role.engineer.desc1")}
-                    </p>
+    const lang = language;
+    const rolesTabs = jobs.map((job) => {
+        const duration = durationLabel(job, lang);
+        return {
+            title: (
+                <span className="flex flex-col items-center leading-tight">
+                    <span>{job.company}</span>
+                    <span className="text-[11px] font-normal opacity-70">{job.tabRole[lang]}</span>
+                </span>
+            ),
+            value: job.id,
+            content: (
+                <article className="w-full max-w-4xl bg-white/[0.01] border border-white/[0.05] rounded-3xl p-8 lg:p-12 text-gray-300 text-base lg:text-lg leading-relaxed font-medium">
+                    <h3 className="text-xl lg:text-2xl font-semibold text-white">{job.role[lang]}</h3>
+                    <p className="mt-1 text-sm lg:text-base text-blue-300">{job.company} · {periodLabel(job, lang)}{duration && ` · ${duration}`}</p>
+                    <p className="text-sm text-gray-400">{job.place[lang]}</p>
+                    {job.summary && <p className="mt-5 text-gray-200">{job.summary[lang]}</p>}
+                    <h4 className="mt-6 mb-3 text-sm uppercase tracking-widest text-gray-400">{t("about.achievements")}</h4>
                     <ul className="list-none space-y-4">
-                        <li className="relative pl-6">
-                            <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
-                            <strong className="text-white">{t("about.role.engineer.exp1.title")}</strong> {t("about.role.engineer.exp1.desc")}
-                        </li>
-                        <li className="relative pl-6">
-                            <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
-                            <strong className="text-white">{t("about.role.engineer.exp2.title")}</strong> {t("about.role.engineer.exp2.desc")}
-                        </li>
+                        {job.achievements.map((item, i) => (
+                            <li key={i} className="relative pl-6">
+                                <span className="absolute left-0 top-2.5 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
+                                {item[lang]}
+                            </li>
+                        ))}
                     </ul>
-                </div>
-            )
-        },
-        {
-            id: "ceo",
-            title: t("about.role.ceo.title"),
-            description: (
-                <div className="text-justify">
-                    <p className="mb-6 text-justify text-gray-200">
-                        <strong>Primal Tech</strong> {t("about.role.ceo.desc1")} <strong>{t("about.role.ceo.desc2")}</strong>{t("about.role.ceo.desc3")} <strong>{t("about.role.ceo.desc4")}</strong> {t("about.role.ceo.desc5")}
-                        <br></br><br></br>{t("about.role.ceo.desc6")}
-                    </p>
-                    <ul className="list-none space-y-4">
-                        <li className="relative pl-6">
-                            <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
-                            <strong className="text-white">{t("about.role.ceo.exp1.title")}</strong> {t("about.role.ceo.exp1.desc")}
-                        </li>
-                        <li className="relative pl-6">
-                            <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
-                            <strong className="text-white">{t("about.role.ceo.exp2.title")}</strong> {t("about.role.ceo.exp2.desc")}
-                        </li>
+                    <ul className="mt-6 flex flex-wrap gap-2" aria-label={t("about.stack")}>
+                        {job.stack.map((s) => (
+                            <li key={s} className="px-3 py-1 text-xs rounded-full border border-white/10 bg-white/[0.04] text-gray-300">{s}</li>
+                        ))}
                     </ul>
-                </div>
-            )
-        },
-        {
-            id: "techlead",
-            title: t("about.role.techlead.title"),
-            description: (
-                <div className="text-justify">
-                    <p className="mb-6 text-justify text-gray-200">
-                        {t("about.role.techlead.desc1")}
-                    </p>
-                    <ul className="list-none space-y-4">
-                        <li className="relative pl-6">
-                            <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
-                            <strong className="text-white">{t("about.role.techlead.exp1.title")}</strong> {t("about.role.techlead.exp1.desc")}
-                        </li>
-                        <li className="relative pl-6">
-                            <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
-                            <strong className="text-white">{t("about.role.techlead.exp2.title")}</strong> {t("about.role.techlead.exp2.desc")}
-                        </li>
-                    </ul>
-                </div>
-            )
-        },
-        {
-            id: "trayectoria",
-            title: t("about.role.work.title"),
-            description: (
-                <ul className="list-none space-y-6">
-                    {[1, 2, 3, 4, 5].map((n) => (
-                        <li key={n} className="relative pl-6">
-                            <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
-                            <strong className="text-white">{t(`about.work.${n}.role`)}</strong>
-                            <span className="block text-sm text-blue-300">{t(`about.work.${n}.company`)} · {t(`about.work.${n}.period`)}</span>
-                            <span className="block mt-1">{t(`about.work.${n}.desc`)}</span>
-                        </li>
-                    ))}
-                </ul>
-            )
-        }
-    ];
-
-    const orderedRoles = [
-        ...roles.filter(role => role.id === "trayectoria"),
-        ...roles.filter(role => role.id !== "trayectoria"),
-    ];
-
-    const rolesTabs = orderedRoles.map(role => ({
-        title: role.title,
-        value: role.id,
-        content: (
-            <div className="w-full max-w-4xl bg-white/[0.01] border border-white/[0.05] rounded-3xl p-8 lg:p-12 flex flex-col items-center justify-start relative">
-                <div className="text-gray-300 text-base lg:text-lg leading-relaxed lg:leading-loose max-w-4xl mx-auto font-medium text-justify">
-                    {role.description}
-                </div>
-            </div>
-        )
-    }));
+                </article>
+            ),
+        };
+    });
 
     const masterTabs = [
         {

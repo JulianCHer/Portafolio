@@ -102,7 +102,7 @@ export default function Presentation() {
                         transition={{ duration: 0.5, delay: 1.2 }}
                         className="roles flex flex-wrap lg:flex-nowrap justify-center lg:justify-start gap-2 lg:gap-3 mt-3 mb-6 w-full"
                     >
-                        <Link href="/sobre-mi?master=experiencia&role=ceo">
+                        <Link href="/sobre-mi?master=experiencia&role=freelance">
                             <h3 className="inline-flex items-center gap-1.5 lg:gap-2 px-3 lg:px-4 py-2 rounded-full border border-blue-500/40 bg-[#081324] text-blue-100 font-semibold text-xs lg:text-[13px] shadow-[0_0_15px_rgba(59,130,246,0.15)] whitespace-nowrap hover:bg-blue-500/20 cursor-pointer transition-colors duration-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-blue-400 shrink-0">
                                     <path d="M11.64 5.23a.75.75 0 00-1.28 0l-1.39 2.5a5.25 5.25 0 01-2.24 2.24l-2.5 1.39a.75.75 0 000 1.28l2.5 1.39a5.25 5.25 0 012.24 2.24l1.39 2.5a.75.75 0 001.28 0l1.39-2.5a5.25 5.25 0 012.24-2.24l2.5-1.39a.75.75 0 000-1.28l-2.5-1.39a5.25 5.25 0 01-2.24-2.24l-1.39-2.5zM21.5 3a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0121.5 3zM18.5 18a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0118.5 18z" />
@@ -110,7 +110,7 @@ export default function Presentation() {
                                 {t("presentation.roles.ceo")}
                             </h3>
                         </Link>
-                        <Link href="/sobre-mi?master=experiencia&role=ingeniero">
+                        <Link href="/sobre-mi?master=experiencia&role=lucidbot">
                             <h3 className="inline-flex items-center gap-1.5 lg:gap-2 px-3 lg:px-4 py-2 rounded-full border border-blue-500/40 bg-[#081324] text-blue-100 font-semibold text-xs lg:text-[13px] shadow-[0_0_15px_rgba(59,130,246,0.15)] whitespace-nowrap hover:bg-blue-500/20 cursor-pointer transition-colors duration-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-blue-400 shrink-0">
                                     <path d="M11.64 5.23a.75.75 0 00-1.28 0l-1.39 2.5a5.25 5.25 0 01-2.24 2.24l-2.5 1.39a.75.75 0 000 1.28l2.5 1.39a5.25 5.25 0 012.24 2.24l1.39 2.5a.75.75 0 001.28 0l1.39-2.5a5.25 5.25 0 012.24-2.24l2.5-1.39a.75.75 0 000-1.28l-2.5-1.39a5.25 5.25 0 01-2.24-2.24l-1.39-2.5zM21.5 3a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0121.5 3zM18.5 18a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0118.5 18z" />
@@ -118,7 +118,7 @@ export default function Presentation() {
                                 {t("presentation.roles.engineer")}
                             </h3>
                         </Link>
-                        <Link href="/sobre-mi?master=experiencia&role=techlead">
+                        <Link href="/sobre-mi?master=experiencia&role=droi">
                             <h3 className="inline-flex items-center gap-1.5 lg:gap-2 px-3 lg:px-4 py-2 rounded-full border border-blue-500/40 bg-[#081324] text-blue-100 font-semibold text-xs lg:text-[13px] shadow-[0_0_15px_rgba(59,130,246,0.15)] whitespace-nowrap hover:bg-blue-500/20 cursor-pointer transition-colors duration-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-blue-400 shrink-0">
                                     <path d="M11.64 5.23a.75.75 0 00-1.28 0l-1.39 2.5a5.25 5.25 0 01-2.24 2.24l-2.5 1.39a.75.75 0 000 1.28l2.5 1.39a5.25 5.25 0 012.24 2.24l1.39 2.5a.75.75 0 001.28 0l1.39-2.5a5.25 5.25 0 012.24-2.24l2.5-1.39a.75.75 0 000-1.28l-2.5-1.39a5.25 5.25 0 01-2.24-2.24l-1.39-2.5zM21.5 3a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0121.5 3zM18.5 18a.75.75 0 01.75.75v.5h.5a.75.75 0 010 1.5h-.5v.5a.75.75 0 01-1.5 0v-.5h-.5a.75.75 0 010-1.5h.5v-.5A.75.75 0 0118.5 18z" />
