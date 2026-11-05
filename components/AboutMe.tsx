@@ -7,11 +7,13 @@ import { Dock } from "@/components/ui/dock";
 import {
     SiTypescript, SiJavascript, SiPhp, SiPython,
     SiReact, SiNextdotjs, SiVuedotjs, SiTailwindcss, SiBootstrap, SiHtml5, SiCss,
-    SiLaravel, SiWordpress, SiMysql, SiDigitalocean, SiGit, SiGithub, SiBitbucket,
-    SiJira, SiNpm, SiComposer, SiWhatsapp, SiOpenai, SiAnthropic, SiGoogle
+    SiLaravel, SiNodedotjs, SiNestjs, SiCplusplus, SiC, SiPostman,
+    SiWordpress, SiMysql, SiPostgresql, SiDocker, SiDigitalocean, SiGit, SiGithub, SiGitlab, SiBitbucket,
+    SiWhatsapp, SiOpenai, SiAnthropic, SiGoogle
 } from "react-icons/si";
 import { FaDatabase, FaServer, FaCogs, FaUsers, FaCreditCard, FaJava, FaCode, FaBriefcase } from "react-icons/fa";
 
+// Arsenal alineado con el perfil de LinkedIn y el CV 2026.
 const techTabs = [
     {
         title: "Frontend",
@@ -31,18 +33,42 @@ const techTabs = [
         )
     },
     {
-        title: "Backend & CMS",
+        title: "Backend",
         value: "backend",
         content: (
             <Dock items={[
+                { title: "Node.js", icon: <SiNodedotjs className="w-1/2 h-1/2 text-green-500" /> },
+                { title: "NestJS", icon: <SiNestjs className="w-1/2 h-1/2 text-red-500" /> },
                 { title: "PHP", icon: <SiPhp className="w-1/2 h-1/2 text-indigo-400" /> },
+                { title: "Laravel", icon: <SiLaravel className="w-1/2 h-1/2 text-red-500" /> },
                 { title: "Python", icon: <SiPython className="w-1/2 h-1/2 text-blue-400" /> },
                 { title: "Java", icon: <FaJava className="w-1/2 h-1/2 text-red-500" /> },
+                { title: "C++", icon: <SiCplusplus className="w-1/2 h-1/2 text-blue-500" /> },
+                { title: "C", icon: <SiC className="w-1/2 h-1/2 text-blue-400" /> },
+            ]} />
+        )
+    },
+    {
+        title: "APIs e Integraciones",
+        value: "integraciones",
+        content: (
+            <Dock items={[
+                { title: "APIs REST", icon: <FaServer className="w-1/2 h-1/2 text-green-400" /> },
+                { title: "Postman", icon: <SiPostman className="w-1/2 h-1/2 text-orange-500" /> },
+                { title: "SIIGO ERP", icon: <FaCogs className="w-1/2 h-1/2 text-cyan-500" /> },
+                { title: "WhatsApp Business API", icon: <SiWhatsapp className="w-1/2 h-1/2 text-green-500" /> },
+                { title: "Datáfonos Redeban", icon: <FaCreditCard className="w-1/2 h-1/2 text-emerald-400" /> },
+            ]} />
+        )
+    },
+    {
+        title: "Bases de datos",
+        value: "datos",
+        content: (
+            <Dock items={[
                 { title: "SQL", icon: <FaDatabase className="w-1/2 h-1/2 text-gray-300" /> },
-                { title: "Laravel", icon: <SiLaravel className="w-1/2 h-1/2 text-red-500" /> },
-                { title: "APIs RESTful", icon: <FaServer className="w-1/2 h-1/2 text-green-400" /> },
-                { title: "WebSockets", icon: <FaCogs className="w-1/2 h-1/2 text-blue-300" /> },
-                { title: "WordPress", icon: <SiWordpress className="w-1/2 h-1/2 text-blue-400" /> },
+                { title: "MySQL", icon: <SiMysql className="w-1/2 h-1/2 text-blue-400" /> },
+                { title: "PostgreSQL", icon: <SiPostgresql className="w-1/2 h-1/2 text-sky-400" /> },
             ]} />
         )
     },
@@ -51,10 +77,21 @@ const techTabs = [
         value: "devops",
         content: (
             <Dock items={[
+                { title: "Docker", icon: <SiDocker className="w-1/2 h-1/2 text-sky-500" /> },
                 { title: "DigitalOcean", icon: <SiDigitalocean className="w-1/2 h-1/2 text-blue-500" /> },
                 { title: "Git", icon: <SiGit className="w-1/2 h-1/2 text-orange-500" /> },
                 { title: "GitHub", icon: <SiGithub className="w-1/2 h-1/2 text-white" /> },
+                { title: "GitLab", icon: <SiGitlab className="w-1/2 h-1/2 text-orange-500" /> },
                 { title: "Bitbucket", icon: <SiBitbucket className="w-1/2 h-1/2 text-blue-400" /> },
+            ]} />
+        )
+    },
+    {
+        title: "CMS",
+        value: "cms",
+        content: (
+            <Dock items={[
+                { title: "WordPress", icon: <SiWordpress className="w-1/2 h-1/2 text-blue-400" /> },
             ]} />
         )
     },
@@ -70,26 +107,11 @@ const techTabs = [
         )
     },
     {
-        title: "Integraciones",
-        value: "integraciones",
-        content: (
-            <Dock items={[
-                { title: "SIIGO ERP", icon: <FaCogs className="w-1/2 h-1/2 text-cyan-500" /> },
-                { title: "WhatsApp API", icon: <SiWhatsapp className="w-1/2 h-1/2 text-green-500" /> },
-                { title: "Pasarelas de Pago", icon: <FaCreditCard className="w-1/2 h-1/2 text-emerald-400" /> },
-                { title: "MySQL", icon: <SiMysql className="w-1/2 h-1/2 text-blue-400" /> },
-            ]} />
-        )
-    },
-    {
         title: "Metodologías",
         value: "metodologias",
         content: (
             <Dock items={[
                 { title: "Agile / Scrum", icon: <FaUsers className="w-1/2 h-1/2 text-blue-400" /> },
-                { title: "Jira", icon: <SiJira className="w-1/2 h-1/2 text-blue-500" /> },
-                { title: "npm", icon: <SiNpm className="w-1/2 h-1/2 text-red-500" /> },
-                { title: "Composer", icon: <SiComposer className="w-1/2 h-1/2 text-amber-600" /> },
             ]} />
         )
     }
