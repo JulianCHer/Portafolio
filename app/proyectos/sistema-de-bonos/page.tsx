@@ -26,7 +26,7 @@ export default function SistemaDeBonos() {
         { name: "PHP", icon: SiPhp, color: "text-indigo-400" },
         { name: "Laravel", icon: SiLaravel, color: "text-red-500" },
         { name: "MySQL", icon: SiMysql, color: "text-blue-400" },
-        { name: "Codex AI", icon: SiOpenai, color: "text-teal-400" },
+        { name: "Codex AI", icon: SiOpenai, color: "text-white" },
         { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
     ];
 

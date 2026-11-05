@@ -9,7 +9,7 @@ import {
     SiReact, SiNextdotjs, SiVuedotjs, SiTailwindcss, SiBootstrap, SiHtml5, SiCss,
     SiLaravel, SiNodedotjs, SiNestjs, SiCplusplus, SiC, SiPostman,
     SiWordpress, SiMysql, SiPostgresql, SiDocker, SiDigitalocean, SiGit, SiGithub, SiGitlab, SiBitbucket,
-    SiWhatsapp, SiOpenai, SiAnthropic, SiGoogle
+    SiWhatsapp, SiOpenai, SiClaude, SiGooglegemini
 } from "react-icons/si";
 import { FaDatabase, FaServer, FaCogs, FaUsers, FaCreditCard, FaJava, FaCode, FaBriefcase } from "react-icons/fa";
 
@@ -100,8 +100,8 @@ const techTabs = [
         value: "ia",
         content: (
             <Dock items={[
-                { title: "Claude (Anthropic)", icon: <SiAnthropic className="w-1/2 h-1/2 text-stone-200" /> },
-                { title: "Gemini (Google)", icon: <SiGoogle className="w-1/2 h-1/2 text-blue-400" /> },
+                { title: "Claude", icon: <SiClaude className="w-1/2 h-1/2 text-[#D97757]" /> },
+                { title: "Gemini", icon: <SiGooglegemini className="w-1/2 h-1/2 text-[#8E75FF]" /> },
                 { title: "Codex (OpenAI)", icon: <SiOpenai className="w-1/2 h-1/2 text-white" /> },
             ]} />
         )
